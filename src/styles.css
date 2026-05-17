@@ -22,30 +22,165 @@ body,
   -webkit-tap-highlight-color: transparent;
 }
 
-.feature-placeholder {
-  padding: 6rem 1.5rem 2rem;
-  text-align: center;
+.face-screen {
+  position: relative;
+  min-height: 100vh;
+  padding: 4.5rem 1.25rem 4rem;
+  max-width: 40rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 
-.feature-placeholder h1 {
-  font-size: 1.6rem;
+.face-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.face-header h1 {
+  font-size: 1.7rem;
   margin: 0;
   color: var(--mesh-accent);
 }
 
-.feature-placeholder p {
-  max-width: 32rem;
+.face-status {
   margin: 0;
-  opacity: 0.85;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
 }
 
-.feature-status {
+.face-name {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--mesh-fg);
+  font-size: 0.95rem;
+}
+
+.face-cam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.face-preview {
+  width: 100%;
+  max-width: 18rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.face-snap,
+.face-test-stub {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--mesh-fg);
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.face-snap:hover:not(:disabled),
+.face-test-stub:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.face-snap:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.face-test-stub {
+  align-self: center;
+  opacity: 0.7;
   font-size: 0.85rem;
+}
+
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.face-tile {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  transition: opacity 200ms ease;
+}
+
+.face-tile-flash {
   opacity: 0.6;
-  font-variant-numeric: tabular-nums;
+}
+
+.face-tile-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.face-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.face-name-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--mesh-fg);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  text-align: left;
+}
+
+.face-reacts {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.4rem;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.face-react {
+  appearance: none;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--mesh-fg);
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.45rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.face-react em {
+  font-style: normal;
+  font-size: 0.75rem;
+  opacity: 0.8;
 }
